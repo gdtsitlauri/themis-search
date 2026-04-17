@@ -1,0 +1,17 @@
+[
+  {
+    "id": "q1",
+    "text": "causal relevance search",
+    "relevant": ["d1", "d5", "d6"]
+  },
+  {
+    "id": "q2",
+    "text": "hybrid semantic retrieval",
+    "relevant": ["d2", "d4"]
+  },
+  {
+    "id": "q3",
+    "text": "image forgery detection noise",
+    "relevant": ["d3"]
+  }
+]

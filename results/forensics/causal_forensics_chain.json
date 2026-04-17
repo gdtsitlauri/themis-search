@@ -1,0 +1,92 @@
+{
+  "original": "img_fake",
+  "manipulation_type": "splice/copy-move",
+  "tool_hypothesis": "editor_or_generator",
+  "artifacts": [
+    "duplicated_regions",
+    "frequency_artifacts",
+    "srm_residual_anomaly",
+    "noise_inconsistency"
+  ],
+  "causal_parents": [
+    "residual_energy",
+    "local_std",
+    "mean_intensity",
+    "frequency_energy"
+  ],
+  "causal_weights": {
+    "residual_energy": 0.2634554427288226,
+    "local_std": 0.23465658961619595,
+    "mean_intensity": 0.2545184729485203,
+    "frequency_energy": 0.24736949470646113
+  },
+  "discovered_edges": [
+    {
+      "source": "residual_energy",
+      "target": "local_std",
+      "strength": 0.6879
+    },
+    {
+      "source": "residual_energy",
+      "target": "mean_intensity",
+      "strength": 0.7823
+    },
+    {
+      "source": "residual_energy",
+      "target": "frequency_energy",
+      "strength": 0.8941
+    },
+    {
+      "source": "residual_energy",
+      "target": "manipulation_proxy",
+      "strength": 0.8433
+    },
+    {
+      "source": "local_std",
+      "target": "intensity_range",
+      "strength": 0.9956
+    },
+    {
+      "source": "local_std",
+      "target": "mean_intensity",
+      "strength": 0.3361
+    },
+    {
+      "source": "local_std",
+      "target": "frequency_energy",
+      "strength": 0.697
+    },
+    {
+      "source": "local_std",
+      "target": "manipulation_proxy",
+      "strength": 0.7511
+    },
+    {
+      "source": "intensity_range",
+      "target": "mean_intensity",
+      "strength": 0.3156
+    },
+    {
+      "source": "intensity_range",
+      "target": "frequency_energy",
+      "strength": 0.711
+    },
+    {
+      "source": "mean_intensity",
+      "target": "manipulation_proxy",
+      "strength": 0.8147
+    },
+    {
+      "source": "frequency_energy",
+      "target": "manipulation_proxy",
+      "strength": 0.7918
+    }
+  ],
+  "steps": [
+    "extract_residual_features",
+    "estimate_copy_move_consistency",
+    "score_frequency_anomalies",
+    "run_pc_discovery_on_patch_features",
+    "infer_manipulation_chain"
+  ]
+}

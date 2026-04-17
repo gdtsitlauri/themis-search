@@ -1,0 +1,37 @@
+{
+  "dataset": "fixture_local_ir_manifest",
+  "documents": [
+    {
+      "id": "ext_d1",
+      "title": "Causal Retrieval Foundations",
+      "text": "Causal relevance search links semantic ranking with citation influence.",
+      "metadata": {
+        "year": 2018,
+        "citations": [],
+        "tags": ["causal", "retrieval"]
+      }
+    },
+    {
+      "id": "ext_d2",
+      "title": "Image Forensics Overview",
+      "text": "Image forgery detection studies copy move, splicing, and spectrum artifacts.",
+      "metadata": {
+        "year": 2020,
+        "citations": ["ext_d1"],
+        "tags": ["forensics", "image"]
+      }
+    }
+  ],
+  "queries": [
+    {
+      "id": "ext_q1",
+      "text": "causal relevance search",
+      "relevant": ["ext_d1"]
+    },
+    {
+      "id": "ext_q2",
+      "text": "image forgery detection",
+      "relevant": ["ext_d2"]
+    }
+  ]
+}

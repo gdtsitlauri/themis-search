@@ -1,0 +1,68 @@
+[
+  {
+    "id": "d1",
+    "title": "Foundations of Causal Search",
+    "text": "Causal relevance in scholarly retrieval explains why a document influences an answer. Early citation driven search links temporal priority with causal evidence.",
+    "metadata": {
+      "year": 2018,
+      "citations": [],
+      "pagerank": 0.32,
+      "tags": ["academic", "causal", "retrieval"]
+    }
+  },
+  {
+    "id": "d2",
+    "title": "Hybrid Neural Retrieval",
+    "text": "Hybrid search combines BM25 with dense retrieval. Semantic search can recover paraphrases even when exact terms do not match.",
+    "metadata": {
+      "year": 2021,
+      "citations": ["d1"],
+      "pagerank": 0.27,
+      "tags": ["neural", "hybrid", "retrieval"]
+    }
+  },
+  {
+    "id": "d3",
+    "title": "Image Splicing Forensics",
+    "text": "Image forensics detects splicing through noise inconsistency and copy move artifacts. Frequency analysis helps spot generated images.",
+    "metadata": {
+      "year": 2020,
+      "citations": ["d1"],
+      "pagerank": 0.20,
+      "tags": ["forensics", "image"]
+    }
+  },
+  {
+    "id": "d4",
+    "title": "Neural Network Training Notes",
+    "text": "Deep learning training notes discuss optimization, neural networks, and model generalization for practical systems.",
+    "metadata": {
+      "year": 2022,
+      "citations": ["d2"],
+      "pagerank": 0.11,
+      "tags": ["neural", "training"]
+    }
+  },
+  {
+    "id": "d5",
+    "title": "Counterfactual Ranking Explanations",
+    "text": "Counterfactual ranking removes a document from the candidate set and measures how answers change. This supports interpretable search explanations.",
+    "metadata": {
+      "year": 2019,
+      "citations": ["d1"],
+      "pagerank": 0.24,
+      "tags": ["causal", "explanations"]
+    }
+  },
+  {
+    "id": "d6",
+    "title": "News Timeline Causality",
+    "text": "Temporal causality in news search values earlier reporting that shaped later coverage. Upstream sources can be more causally relevant than similar summaries.",
+    "metadata": {
+      "year": 2017,
+      "citations": [],
+      "pagerank": 0.29,
+      "tags": ["news", "temporal", "causal"]
+    }
+  }
+]

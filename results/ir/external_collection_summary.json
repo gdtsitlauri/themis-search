@@ -1,0 +1,12 @@
+{
+  "dataset": "fixture_local_ir_manifest",
+  "documents": 2,
+  "queries": 2,
+  "bm25_mean_map": 1.0,
+  "dense_mean_ndcg@3": 1.0,
+  "hybrid_mean_ndcg@3": 1.0,
+  "oracle_changes_dense_top_pct": 0.0,
+  "dense_backend": "sentence_transformer",
+  "dense_device": "cuda",
+  "hybrid_alpha": 0.2
+}

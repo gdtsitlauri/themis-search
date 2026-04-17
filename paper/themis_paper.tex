@@ -1,0 +1,73 @@
+\documentclass{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{booktabs}
+\usepackage{amsmath}
+\title{THEMIS: Trustworthy Hybrid Engine for Multimodal Intelligent Search}
+\author{Open Source Research Prototype}
+\date{}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+THEMIS is a multimodal research framework that unifies classical information retrieval, neural retrieval, type-safe query processing, multimedia forensics, and causal reranking. The central hypothesis behind THEMIS is that relevance should not be modeled only as lexical or embedding similarity, but also as causal contribution to the answer sought by the user. We instantiate this idea through THEMIS-ORACLE, a reranking approach that combines semantic similarity, citation- and graph-based influence, temporal priority, and lightweight causal-structure discovery. In parallel, THEMIS extends the same explanatory philosophy to media forensics by pairing manipulation detection with causal artifact chains. The repository delivers a runnable research prototype spanning Python, Haskell, and Scala, together with passing tests, committed benchmark artifacts, and a paper draft synchronized with repository outputs.
+\end{abstract}
+
+\section{Introduction}
+Modern search engines are highly effective at retrieving similar documents, but similarity alone does not fully capture why a document matters. THEMIS studies a stronger notion of relevance: a document may be important because it is causally upstream of an answer, because it influenced later work, or because removing it would materially alter the final ranking. This perspective motivates THEMIS-ORACLE, a causal reranking layer built on top of sparse, dense, and hybrid retrieval.
+
+THEMIS is also motivated by a parallel problem in multimedia forensics. Most forensic systems emit binary predictions such as ``real'' versus ``manipulated.'' In contrast, real investigative workflows often require an explanatory trail. THEMIS therefore models causal artifact chains that connect observations such as duplicated regions, spectral anomalies, or temporal inconsistencies to plausible manipulation hypotheses.
+
+\section{Classical Information Retrieval}
+The classical IR stack includes an inverted index, positional index, Boolean retrieval, phrase search, and proximity search. Ranking modules include TF-IDF, BM25, Dirichlet-smoothed language modeling, and PageRank-style graph scoring. These components provide both strong sparse baselines and interpretable retrieval signals that can later be fused with neural and causal scores.
+
+\section{Neural Search}
+The neural stack includes dense retrieval, cross-encoder reranking, late interaction scoring, and hybrid sparse+dense fusion. The implementation supports CUDA-aware execution and CPU fallbacks. Exact and approximate indexing paths are available through FAISS where supported, while GPU-aware tensor fallback paths preserve neural retrieval behavior when specific GPU FAISS bindings are unavailable. The serving path is warmed so the local API remains fast on the committed fixture corpora.
+
+\section{Type-Safe Query Language}
+THEMIS includes a Haskell query language that provides a typed abstract syntax tree for terms, Boolean structure, phrase queries, proximity queries, and boosting. The parser supports explicit Boolean syntax and implicit conjunction. Query payloads are serialized into shared JSON, SQL, and Elasticsearch-style DSL representations.
+
+We model denotational semantics as a mapping
+\[
+E(q) : \mathcal{D} \rightarrow 2^{\mathrm{Doc}}
+\]
+from a finite document universe to the set of matching document identifiers. Conjunction corresponds to set intersection, disjunction to set union, negation to complement, phrases to contiguous token windows, and proximity operators to bounded token-distance satisfaction. The optimizer applies double-negation elimination, De Morgan rewrites, flattening, and selectivity-aware reordering while preserving $E(q)$ on the tested finite universes.
+
+\section{Multimedia Forensics}
+The multimedia-forensics layer is image-first but extends to video and audio baselines. Image analysis includes copy-move style duplication cues, SRM-like residual behavior, and frequency-domain anomaly scoring. Video analysis includes frame duplication and temporal inconsistency signals. Audio analysis includes splice-like discontinuities and background inconsistency heuristics. THEMIS further exposes a causal chain describing likely artifact parents and the manipulation path suggested by the observed evidence.
+
+\section{THEMIS-ORACLE}
+THEMIS-ORACLE treats relevance as more than similarity. For a query $q$ and document $d$, the reranker combines semantic retrieval evidence with graph, citation, lexical, and temporal signals:
+\[
+\mathrm{score}(q, d) =
+\alpha \cdot \mathrm{semantic}(q, d) +
+\beta \cdot \mathrm{causal}(d, q) +
+\gamma \cdot \mathrm{temporal}(d) +
+\delta \cdot \mathrm{graph}(d)
+\]
+where the effective mixture is refined through lightweight causal skeleton discovery over feature sets associated with the query-result pool. The output includes counterfactual-style explanations that estimate how much the answer would change if a highly ranked item were removed.
+
+\section{Experiments}
+Committed CSV and JSON outputs populate the artifact set in \texttt{results/}. Across three synthetic seeds, BM25 achieves mean MAP $0.4829$. The CUDA-backed dense retriever averages $6.6027$ ms on the 1000-document latency setting. ORACLE produces mean top-result score $1.3324$ and changes the dense top result in $94.44\%$ of benchmark queries. The multimedia-forensics pipeline keeps the clean image fixture unflagged, detects the manipulated fixture, and processes a 100-image batch at $81.894$ images per second on CUDA.
+
+\begin{table}[h]
+\centering
+\begin{tabular}{llll}
+\toprule
+Subsystem & Representative Metric & Value & Artifact \\
+\midrule
+IR & Mean BM25 MAP (3 seeds) & 0.4829 & ranking\_comparison.csv \\
+Neural & Dense latency (1000 docs) & 6.6027 ms & latency\_benchmark.csv \\
+Forensics & 100-image CUDA throughput & 81.894 img/s & image\_detection\_results.csv \\
+ORACLE & Mean top score & 1.3324 & causal\_vs\_standard.csv \\
+\bottomrule
+\end{tabular}
+\caption{Committed phase-1 experiment artifacts used by the repository paper draft.}
+\end{table}
+
+The repository also includes optional local adapters for generic IR manifests, MS MARCO-style TSV subsets, and multimedia-forensics manifests. These hooks allow the same evaluation pipeline to be reused when local datasets are available on disk, without changing the core system design.
+
+\section{Conclusion}
+THEMIS is already breadth-complete as a research prototype: it integrates sparse retrieval, neural retrieval, typed query processing, multimedia forensics, and causal reranking into a single reproducible codebase. The most important future extensions are not architectural rewrites, but stronger large-scale evaluation, richer external datasets, and deeper formalization of the causal assumptions.
+
+\end{document}

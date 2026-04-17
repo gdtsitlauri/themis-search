@@ -1,0 +1,13 @@
+seed,index_size,query,dense_latency_ms,approximate,backend,device
+7,100,causal relevance search,6.09,False,sentence_transformer,cuda
+7,300,causal relevance search,7.087,True,sentence_transformer,cuda
+7,600,causal relevance search,6.757,True,sentence_transformer,cuda
+7,1000,causal relevance search,6.647,True,sentence_transformer,cuda
+11,100,causal relevance search,6.179,False,sentence_transformer,cuda
+11,300,causal relevance search,6.661,True,sentence_transformer,cuda
+11,600,causal relevance search,6.864,True,sentence_transformer,cuda
+11,1000,causal relevance search,6.598,True,sentence_transformer,cuda
+19,100,causal relevance search,6.271,False,sentence_transformer,cuda
+19,300,causal relevance search,6.574,True,sentence_transformer,cuda
+19,600,causal relevance search,6.376,True,sentence_transformer,cuda
+19,1000,causal relevance search,6.563,True,sentence_transformer,cuda

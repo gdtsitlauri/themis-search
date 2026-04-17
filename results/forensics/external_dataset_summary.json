@@ -1,0 +1,8 @@
+{
+  "dataset": "fixture_local_forensics_manifest",
+  "device": "cuda",
+  "images": 2,
+  "videos": 1,
+  "audio": 1,
+  "accuracy": 1.0
+}

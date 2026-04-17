@@ -1,0 +1,27 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "themis-search"
+version = "0.1.0"
+description = "THEMIS research MVP for hybrid search and digital media analysis"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+  "fastapi>=0.110",
+  "numpy>=2.0",
+  "opencv-python>=4.10",
+  "sentence-transformers>=3.0",
+  "faiss-cpu>=1.8",
+  "torch>=2.2",
+]
+
+[project.scripts]
+themis = "themis.cli:main"
+
+[tool.setuptools]
+package-dir = {"" = "src/python"}
+
+[tool.setuptools.packages.find]
+where = ["src/python"]

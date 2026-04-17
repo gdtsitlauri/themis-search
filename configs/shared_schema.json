@@ -1,0 +1,32 @@
+{
+  "query": {
+    "raw": "string",
+    "normalized": "string",
+    "ast": "object",
+    "estimated_selectivity": "number|null",
+    "sql": "string|null",
+    "elasticsearch": "object|null",
+    "errors": ["string"]
+  },
+  "search_result": {
+    "doc_id": "string",
+    "score": "number",
+    "rank": "integer",
+    "title": "string",
+    "snippet": "string",
+    "retriever": "string",
+    "explanation": {
+      "summary": "string",
+      "factors": ["string"]
+    }
+  },
+  "benchmark_row": {
+    "seed": "integer",
+    "dataset": "string",
+    "model": "string",
+    "query_id": "string",
+    "latency_ms": "number",
+    "metric_name": "string",
+    "metric_value": "number"
+  }
+}

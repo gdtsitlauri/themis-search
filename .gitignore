@@ -1,0 +1,47 @@
+# Python
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+
+# Local envs
+.venv/
+venv/
+env/
+
+# Haskell / Cabal
+dist-newstyle/
+cabal.project.local
+
+# Scala / JVM / SBT
+target/
+project/target/
+.bsp/
+.metals/
+
+# Editor / OS
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+.codex
+
+# TeX build artifacts
+*.aux
+*.bbl
+*.bcf
+*.blg
+*.fdb_latexmk
+*.fls
+*.log
+*.out
+*.run.xml
+*.synctex.gz
+*.toc
+
+# Keep committed experiment outputs
+!results/
+!results/**/*

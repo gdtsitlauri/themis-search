@@ -1,0 +1,29 @@
+{
+  "dataset": "fixture_local_forensics_manifest",
+  "images": [
+    {
+      "id": "fixture_img_real",
+      "path": "forensics_image_real.json",
+      "label": false
+    },
+    {
+      "id": "fixture_img_fake",
+      "path": "forensics_image_fake.json",
+      "label": true
+    }
+  ],
+  "videos": [
+    {
+      "id": "fixture_vid_dup",
+      "path": "forensics_video.json",
+      "label": true
+    }
+  ],
+  "audio": [
+    {
+      "id": "fixture_aud_splice",
+      "path": "forensics_audio.json",
+      "label": true
+    }
+  ]
+}

@@ -1,0 +1,140 @@
+[
+  {
+    "seed": 7,
+    "query_id": "s7_q000",
+    "doc_id": "s7_d0095",
+    "explanation": "s7_d0095 is relevant because semantic similarity is reinforced by discovered causal parents for this query.",
+    "factors": [
+      "semantic=0.712",
+      "causal=0.633",
+      "lexical_overlap=0.667",
+      "temporal=1.200",
+      "cited_by=2",
+      "pagerank=0.300",
+      "learned_weights={'semantic_score': 0.12573139784465076, 'temporal_priority': 0.44109417108279714, 'pagerank': 0.26650776440588547, 'lexical_overlap': 0.0625, 'cited_by': 0.075, 'citation_count': 0.02916666666666667}",
+      "causal_edges=[('semantic_score', 'temporal_priority', 0.3027), ('semantic_score', 'pagerank', 0.2213), ('semantic_score', 'relevance_proxy', 0.285), ('temporal_priority', 'pagerank', 0.5964)]",
+      "query=causal relevance search"
+    ],
+    "counterfactual": {
+      "doc_id": "s7_d0095",
+      "baseline_score": 1.1705,
+      "replacement_score": 1.1667,
+      "answer_change_pct": 0.32
+    }
+  },
+  {
+    "seed": 7,
+    "query_id": "s7_q001",
+    "doc_id": "s7_d0066",
+    "explanation": "s7_d0066 is relevant because semantic similarity is reinforced by discovered causal parents for this query.",
+    "factors": [
+      "semantic=0.317",
+      "causal=0.560",
+      "lexical_overlap=0.667",
+      "temporal=1.500",
+      "cited_by=2",
+      "pagerank=0.400",
+      "learned_weights={'cited_by': 0.24537273853489205, 'temporal_priority': 0.27035969551092404, 'pagerank': 0.23333123636616887, 'semantic_score': 0.16853932584269662, 'lexical_overlap': 0.056179775280898875, 'citation_count': 0.026217228464419477}",
+      "causal_edges=[('semantic_score', 'lexical_overlap', 0.9978), ('semantic_score', 'temporal_priority', 0.356), ('semantic_score', 'pagerank', 0.2308), ('lexical_overlap', 'cited_by', 0.4082)]",
+      "query=dense bm25 fusion"
+    ],
+    "counterfactual": {
+      "doc_id": "s7_d0066",
+      "baseline_score": 1.3289,
+      "replacement_score": 1.3029,
+      "answer_change_pct": 1.96
+    }
+  },
+  {
+    "seed": 7,
+    "query_id": "s7_q002",
+    "doc_id": "s7_d0132",
+    "explanation": "s7_d0132 is relevant because semantic similarity is reinforced by discovered causal parents for this query.",
+    "factors": [
+      "semantic=0.477",
+      "causal=0.707",
+      "lexical_overlap=0.667",
+      "temporal=1.400",
+      "cited_by=2",
+      "pagerank=0.360",
+      "learned_weights={'semantic_score': 0.2631846722247932, 'temporal_priority': 0.48947241961812404, 'pagerank': 0.08067624149041613, 'lexical_overlap': 0.0625, 'cited_by': 0.075, 'citation_count': 0.02916666666666667}",
+      "causal_edges=[('semantic_score', 'temporal_priority', 0.5419), ('semantic_score', 'pagerank', 0.8536), ('semantic_score', 'relevance_proxy', 0.5377), ('temporal_priority', 'pagerank', 0.1694)]",
+      "query=synthetic image fingerprint"
+    ],
+    "counterfactual": {
+      "doc_id": "s7_d0132",
+      "baseline_score": 1.3371,
+      "replacement_score": 1.2797,
+      "answer_change_pct": 4.29
+    }
+  },
+  {
+    "seed": 7,
+    "query_id": "s7_q003",
+    "doc_id": "s7_d0133",
+    "explanation": "s7_d0133 is relevant because semantic similarity is reinforced by discovered causal parents for this query.",
+    "factors": [
+      "semantic=0.612",
+      "causal=0.673",
+      "lexical_overlap=1.000",
+      "temporal=1.300",
+      "cited_by=2",
+      "pagerank=0.380",
+      "learned_weights={'semantic_score': 0.16291424201794996, 'cited_by': 0.1309189422871617, 'citation_count': 0.10049295559968059, 'temporal_priority': 0.3766687368292627, 'pagerank': 0.15923768140547995, 'lexical_overlap': 0.06976744186046512}",
+      "causal_edges=[('semantic_score', 'cited_by', 0.3256), ('semantic_score', 'citation_count', 0.8775), ('semantic_score', 'temporal_priority', 0.2987), ('semantic_score', 'pagerank', 0.1433)]",
+      "query=video frame duplication"
+    ],
+    "counterfactual": {
+      "doc_id": "s7_d0133",
+      "baseline_score": 1.4181,
+      "replacement_score": 1.3651,
+      "answer_change_pct": 3.74
+    }
+  },
+  {
+    "seed": 7,
+    "query_id": "s7_q004",
+    "doc_id": "s7_d0014",
+    "explanation": "s7_d0014 is relevant because semantic similarity is reinforced by discovered causal parents for this query.",
+    "factors": [
+      "semantic=0.314",
+      "causal=0.560",
+      "lexical_overlap=0.667",
+      "temporal=1.500",
+      "cited_by=2",
+      "pagerank=0.380",
+      "learned_weights={'semantic_score': 0.16418832785044543, 'cited_by': 0.11168284558754368, 'temporal_priority': 0.5861977920792523, 'lexical_overlap': 0.06465517241379311, 'citation_count': 0.030172413793103453, 'pagerank': 0.04310344827586207}",
+      "causal_edges=[('semantic_score', 'cited_by', 0.3074), ('semantic_score', 'temporal_priority', 0.1657), ('semantic_score', 'pagerank', 0.7724), ('semantic_score', 'relevance_proxy', 0.2714)]",
+      "query=background noise inconsistency"
+    ],
+    "counterfactual": {
+      "doc_id": "s7_d0014",
+      "baseline_score": 1.4701,
+      "replacement_score": 1.2945,
+      "answer_change_pct": 11.94
+    }
+  },
+  {
+    "seed": 7,
+    "query_id": "s7_q005",
+    "doc_id": "s7_d0040",
+    "explanation": "s7_d0040 is relevant because semantic similarity is reinforced by discovered causal parents for this query.",
+    "factors": [
+      "semantic=0.624",
+      "causal=0.560",
+      "lexical_overlap=0.667",
+      "temporal=1.500",
+      "cited_by=2",
+      "pagerank=0.220",
+      "learned_weights={'semantic_score': 0.1711520251400986, 'temporal_priority': 0.4347147747008381, 'pagerank': 0.22746653349239668, 'lexical_overlap': 0.0625, 'cited_by': 0.075, 'citation_count': 0.02916666666666667}",
+      "causal_edges=[('semantic_score', 'temporal_priority', 0.4033), ('semantic_score', 'pagerank', 0.3138), ('semantic_score', 'relevance_proxy', 0.3937), ('temporal_priority', 'pagerank', 0.5244)]",
+      "query=counterfactual document ranking"
+    ],
+    "counterfactual": {
+      "doc_id": "s7_d0040",
+      "baseline_score": 1.255,
+      "replacement_score": 1.2437,
+      "answer_change_pct": 0.9
+    }
+  }
+]

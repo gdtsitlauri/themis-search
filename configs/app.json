@@ -1,0 +1,25 @@
+{
+  "dataset": "tiny_research_corpus",
+  "top_k": 5,
+  "hybrid_alpha": 0.55,
+  "oracle_weights": {
+    "semantic": 0.45,
+    "causal": 0.35,
+    "temporal": 0.20
+  },
+  "hardware": {
+    "prefer_gpu": true,
+    "allow_cpu_fallback": true
+  },
+  "external_datasets": {
+    "ir_manifest": "",
+    "forensics_manifest": "",
+    "msmarco": {
+      "passages_tsv": "",
+      "queries_tsv": "",
+      "qrels_tsv": "",
+      "max_docs": 1000,
+      "max_queries": 100
+    }
+  }
+}

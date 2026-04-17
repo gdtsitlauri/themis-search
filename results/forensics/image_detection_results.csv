@@ -1,0 +1,6 @@
+asset_id,manipulated,detector,score,device
+img_real,False,image,5.615,cuda
+img_fake,True,image,6.729,cuda
+vid_dup,True,video,0.707,cuda
+aud_splice,True,audio,0.7,cuda
+batch_100,100,batch_images,81.894,cuda
