@@ -1,5 +1,10 @@
 # THEMIS
 
+**Author:** George David Tsitlauri  
+**Affiliation:** Dept. of Informatics & Telecommunications, University of Thessaly, Greece  
+**Contact:** gdtsitlauri@gmail.com  
+**Year:** 2026
+
 Trustworthy Hybrid Engine for Multimodal Intelligent Search
 
 THEMIS is a research-oriented multimodal search and media-analysis framework that combines:
@@ -134,6 +139,53 @@ Run a forensics sample:
 PYTHONPATH=src/python python3 -m themis.cli forensics --image data/fixtures/forensics_image_fake.json
 ```
 
+## Computation Theory Module
+
+`src/python/themis/computation/` adds a formal computation theory track covering three pillars of theoretical computer science:
+
+### Finite Automata (`automata.py`)
+
+| Class | Highlights |
+|---|---|
+| `DFA` | `accepts()`, `trace()`, factory methods: `even_zeros`, `ends_with_ab`, `divisible_by_3` |
+| `NFA` | ε-closure, `accepts()` via powerset simulation, `to_dfa()` subset construction |
+
+### Turing Machines (`turing.py`)
+
+| Machine | Description |
+|---|---|
+| `palindrome_checker` | Two-pointer crossing scan |
+| `increment_binary` | Ripple carry from rightmost bit |
+| `copy_string` | Mark-copy-return loop |
+
+### Complexity Classes (`complexity.py`)
+
+| Problem | Algorithm | Class |
+|---|---|---|
+| 2-SAT | Kosaraju SCC (O(n+m)) | P |
+| Bipartite Matching | Augmenting paths | P |
+| 3-SAT | Exhaustive 2^n enumeration | NP-complete |
+| Subset Sum | DP O(n·target) | NP-complete |
+| k-Graph Coloring | Backtracking | NP-complete |
+
+### Results
+
+```
+DFA tests:              26
+NFA→DFA consistent:     True
+ε-closure consistent:   True
+Turing machine runs:    21
+Complexity demos:       9
+```
+
+Results saved to `results/computation/` (dfa_results.csv, turing_results.csv, complexity_results.json).
+
+Run the suite:
+
+```bash
+PYTHONPATH=src/python python3 -m themis.computation.runner
+```
+
 ## Research notes
 
 THEMIS is already suitable as a serious research prototype:
@@ -143,3 +195,15 @@ THEMIS is already suitable as a serious research prototype:
 - the paper draft is synchronized with committed metrics
 
 The remaining gap between this repository and a full production-scale system is mostly about larger external datasets, cluster-scale deployment, and stronger external evaluation, not about missing core architecture.
+
+## Citation
+
+```bibtex
+@misc{tsitlauri2026themis,
+  author = {George David Tsitlauri},
+  title  = {THEMIS: Trustworthy Hybrid Engine for Multimodal Intelligent Search},
+  year   = {2026},
+  institution = {University of Thessaly},
+  email  = {gdtsitlauri@gmail.com}
+}
+```

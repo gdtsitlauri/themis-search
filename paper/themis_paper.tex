@@ -3,8 +3,11 @@
 \usepackage{booktabs}
 \usepackage{amsmath}
 \title{THEMIS: Trustworthy Hybrid Engine for Multimodal Intelligent Search}
-\author{Open Source Research Prototype}
-\date{}
+\author{George David Tsitlauri\\
+\textit{Dept. of Informatics \& Telecommunications}\\
+\textit{University of Thessaly, Greece}\\
+gdtsitlauri@gmail.com}
+\date{2026}
 
 \begin{document}
 \maketitle
@@ -67,7 +70,27 @@ ORACLE & Mean top score & 1.3324 & causal\_vs\_standard.csv \\
 
 The repository also includes optional local adapters for generic IR manifests, MS MARCO-style TSV subsets, and multimedia-forensics manifests. These hooks allow the same evaluation pipeline to be reused when local datasets are available on disk, without changing the core system design.
 
+\section{Computation Theory Module}
+THEMIS includes a standalone computation theory track (\texttt{src/python/themis/computation/}) that formalises and executes classical models from automata theory and computational complexity.
+
+\subsection{Finite Automata}
+The \texttt{DFA} class stores a transition function $\delta: Q \times \Sigma \rightarrow Q$ and supports word acceptance and step-by-step trace generation. Factory methods provide three canonical machines: binary strings with an even number of zeros, strings ending in \texttt{ab}, and binary representations of multiples of three. The \texttt{NFA} class adds $\varepsilon$-closure computation via BFS and implements the subset construction algorithm (\texttt{to\_dfa()}) to produce an equivalent deterministic machine. Consistency between the two acceptance paths is verified across 26 test strings.
+
+\subsection{Turing Machines}
+The \texttt{TuringMachine} class simulates a single-tape machine with a dictionary-encoded transition function $\delta: Q \times \Gamma \rightarrow Q \times \Gamma \times \{L, R\}$ and a configurable step limit. Three reference machines are provided: palindrome checking (two-pointer crossing), binary increment (ripple carry), and string copying (mark-copy-return). All 21 test runs produce the expected accepted/rejected outcomes with recorded tape traces.
+
+\subsection{Complexity Classes}
+Five canonical problems illustrate the P/NP separation:
+\begin{itemize}
+  \item \textbf{2-SAT}: Kosaraju SCC, $O(n+m)$, class~P.
+  \item \textbf{Bipartite Matching}: augmenting-path search, class~P.
+  \item \textbf{3-SAT}: exhaustive $2^n$ enumeration, NP-complete.
+  \item \textbf{Subset Sum}: DP in $O(n \cdot T)$, NP-complete.
+  \item \textbf{$k$-Graph Coloring}: backtracking, NP-complete.
+\end{itemize}
+Results are saved to \texttt{results/computation/complexity\_results.json} with runtime and class annotation.
+
 \section{Conclusion}
-THEMIS is already breadth-complete as a research prototype: it integrates sparse retrieval, neural retrieval, typed query processing, multimedia forensics, and causal reranking into a single reproducible codebase. The most important future extensions are not architectural rewrites, but stronger large-scale evaluation, richer external datasets, and deeper formalization of the causal assumptions.
+THEMIS is already breadth-complete as a research prototype: it integrates sparse retrieval, neural retrieval, typed query processing, multimedia forensics, causal reranking, and formal computation theory into a single reproducible codebase. The most important future extensions are not architectural rewrites, but stronger large-scale evaluation, richer external datasets, and deeper formalization of the causal assumptions.
 
 \end{document}

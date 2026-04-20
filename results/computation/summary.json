@@ -1,0 +1,54 @@
+{
+  "dfa_tests": 26,
+  "nfa_consistency_checks": true,
+  "epsilon_consistency_checks": true,
+  "turing_runs": 21,
+  "complexity_demos": 9,
+  "p_vs_np_examples": [
+    {
+      "problem": "2-SAT",
+      "class": "P",
+      "solved": true
+    },
+    {
+      "problem": "Bipartite Matching",
+      "class": "P",
+      "solved": 3
+    },
+    {
+      "problem": "3-SAT",
+      "class": "NP-complete",
+      "solved": true
+    },
+    {
+      "problem": "3-SAT",
+      "class": "NP-complete",
+      "solved": false
+    },
+    {
+      "problem": "Subset Sum",
+      "class": "NP-complete",
+      "solved": true
+    },
+    {
+      "problem": "Subset Sum",
+      "class": "NP-complete",
+      "solved": true
+    },
+    {
+      "problem": "2-Graph Coloring",
+      "class": "P",
+      "solved": false
+    },
+    {
+      "problem": "3-Graph Coloring",
+      "class": "NP-complete",
+      "solved": true
+    },
+    {
+      "problem": "3-Graph Coloring",
+      "class": "NP-complete",
+      "solved": true
+    }
+  ]
+}

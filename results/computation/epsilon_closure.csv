@@ -1,0 +1,10 @@
+word,nfa_accepts,dfa_accepts,consistent
+(empty),True,True,True
+a,True,True,True
+b,True,True,True
+aa,True,True,True
+ab,True,True,True
+aab,True,True,True
+abb,True,True,True
+b,True,True,True
+bb,True,True,True
