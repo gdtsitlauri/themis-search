@@ -14,6 +14,9 @@ gdtsitlauri@gmail.com}
 
 \begin{abstract}
 THEMIS is a multimodal research framework that unifies classical information retrieval, neural retrieval, type-safe query processing, multimedia forensics, and causal reranking. The central hypothesis behind THEMIS is that relevance should not be modeled only as lexical or embedding similarity, but also as causal contribution to the answer sought by the user. We instantiate this idea through THEMIS-ORACLE, a reranking approach that combines semantic similarity, citation- and graph-based influence, temporal priority, and lightweight causal-structure discovery. In parallel, THEMIS extends the same explanatory philosophy to media forensics by pairing manipulation detection with causal artifact chains. The repository delivers a runnable research prototype spanning Python, Haskell, and Scala, together with passing tests, committed benchmark artifacts, and a paper draft synchronized with repository outputs.
+The paper's main empirical center is the retrieval-and-reranking stack; the
+forensics and computation-theory modules are included as supporting research
+tracks rather than as equal slices of one narrow benchmark thesis.
 \end{abstract}
 
 \section{Introduction}
@@ -53,6 +56,23 @@ where the effective mixture is refined through lightweight causal skeleton disco
 \section{Experiments}
 Committed CSV and JSON outputs populate the artifact set in \texttt{results/}. Across three synthetic seeds, BM25 achieves mean MAP $0.4829$. The CUDA-backed dense retriever averages $6.6027$ ms on the 1000-document latency setting. ORACLE produces mean top-result score $1.3324$ and changes the dense top result in $94.44\%$ of benchmark queries. The multimedia-forensics pipeline keeps the clean image fixture unflagged, detects the manipulated fixture, and processes a 100-image batch at $81.894$ images per second on CUDA.
 
+\subsection{Interpretation Boundary}
+The strongest claim supported by the committed THEMIS artifacts is that the
+repository provides a credible hybrid-retrieval and causal-reranking research
+platform with meaningful supporting forensics functionality. The breadth of the
+repository is real, but the evidence is not best interpreted as if every module
+constituted an equally deep standalone benchmark paper. The retrieval +
+ORACLE axis is the clearest empirical core.
+
+\subsection{Why the Current Release Still Stands Up Well}
+Even with that boundary, the current THEMIS release remains stronger than a
+typical broad prototype repository because the central retrieval story is backed
+by synchronized code, tests, paper text, and committed artifacts. The reranking
+layer materially changes the top-result distribution, the latency path is
+already practical on the local benchmark configuration, and the surrounding
+forensics and typed-query modules are implemented deeply enough to function as
+real supporting research tracks rather than decorative extras.
+
 \begin{table}[h]
 \centering
 \begin{tabular}{llll}
@@ -91,6 +111,13 @@ Five canonical problems illustrate the P/NP separation:
 Results are saved to \texttt{results/computation/complexity\_results.json} with runtime and class annotation.
 
 \section{Conclusion}
-THEMIS is already breadth-complete as a research prototype: it integrates sparse retrieval, neural retrieval, typed query processing, multimedia forensics, causal reranking, and formal computation theory into a single reproducible codebase. The most important future extensions are not architectural rewrites, but stronger large-scale evaluation, richer external datasets, and deeper formalization of the causal assumptions.
+THEMIS is a technically rich and reproducible research prototype whose clearest
+strength lies in hybrid retrieval combined with causal reranking. Its broader
+forensics and computation-theory tracks add real value and technical depth, but
+the repository is strongest when presented with that retrieval-centered
+empirical focus rather than as a single uniformly deep benchmark result across
+all submodules. The most important future extensions are larger external
+evaluation sets, stronger dataset diversity, and deeper validation of the
+causal assumptions behind ORACLE.
 
 \end{document}

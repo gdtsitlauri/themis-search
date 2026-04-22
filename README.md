@@ -1,9 +1,5 @@
 # THEMIS
 
-**Author:** George David Tsitlauri  
-**Affiliation:** Dept. of Informatics & Telecommunications, University of Thessaly, Greece  
-**Contact:** gdtsitlauri@gmail.com  
-**Year:** 2026
 
 Trustworthy Hybrid Engine for Multimodal Intelligent Search
 
@@ -15,6 +11,30 @@ THEMIS is a research-oriented multimodal search and media-analysis framework tha
 - causal reranking through THEMIS-ORACLE
 
 The project is designed as a reproducible research prototype rather than a thin demo. It includes runnable code, passing tests, committed benchmark artifacts, and a paper draft with real numbers derived from the repository outputs.
+
+
+## Project Metadata
+
+| Field | Value |
+| --- | --- |
+| Author | George David Tsitlauri |
+| Affiliation | Dept. of Informatics & Telecommunications, University of Thessaly, Greece |
+| Contact | gdtsitlauri@gmail.com |
+| Year | 2026 |
+
+## Primary Research Thesis
+
+The most important and most defensible reading of THEMIS is:
+
+- a **hybrid retrieval and reranking research platform**,
+- centered on **THEMIS-ORACLE** as the repository's main novel algorithmic
+  identity,
+- with multimedia forensics and computation-theory modules included as
+  technically real supporting research tracks.
+
+This framing is stronger than presenting THEMIS as five equal sub-projects at
+once. The repository's clearest empirical center of gravity is the retrieval +
+ORACLE stack.
 
 ## Core idea
 
@@ -59,6 +79,38 @@ The same philosophy is applied to media forensics:
 - ORACLE mean top score: `1.3324`
 - ORACLE changes the dense top result on `94.44%` of synthetic benchmark queries
 
+## Retrieval and ORACLE Snapshot
+
+Key committed retrieval-side artifacts:
+
+- `results/ir/ranking_comparison.csv`
+- `results/neural_search/latency_benchmark.csv`
+- `results/themis_oracle/causal_vs_standard.csv`
+
+Representative committed numbers:
+
+- BM25 mean MAP across 3 seeds: about `0.483`
+- Dense latency at 1000 docs: about `6.60 ms`
+- ORACLE mean top score: `1.3324`
+- ORACLE changes the dense top result on `94.44%` of synthetic benchmark queries
+
+Interpretation:
+
+- The main research value is not raw dense retrieval alone.
+- It is the combination of sparse + dense retrieval with a causal reranking
+  layer that materially changes the final top result distribution.
+
+## Why THEMIS Can Now Be Read More Strongly
+
+THEMIS is closer to the stronger bucket when it is foregrounded as a retrieval
+and reranking system with real supporting depth:
+
+- the core retrieval story already has committed ranking and latency artifacts,
+- `THEMIS-ORACLE` gives the repository a clearer algorithmic identity than a
+  generic multimodal-search wrapper,
+- the forensics and computation modules now reinforce the repository's research
+  breadth instead of diluting its main thesis.
+
 ## Current artifacts
 
 Main committed outputs:
@@ -70,6 +122,54 @@ Main committed outputs:
 - `results/forensics/causal_forensics_chain.json`
 - `results/themis_oracle/causal_vs_standard.csv`
 - `results/themis_oracle/explanations_sample.json`
+
+## Evidence Hierarchy
+
+THEMIS is broad by design, but the repository should be interpreted as a
+**research platform with multiple validated modules**, not as a single narrow
+benchmark paper.
+
+- Primary evidence:
+  - retrieval benchmarks
+  - neural-search latency artifacts
+  - THEMIS-ORACLE reranking outputs
+- Secondary evidence:
+  - multimedia forensics detection and causal-chain artifacts
+- Supporting research/education evidence:
+  - computation-theory module and formal language machinery
+
+This makes THEMIS valuable and technically distinctive, but somewhat more
+diffuse than the most tightly focused flagship repos.
+
+## Why THEMIS is still close to the upper tier
+
+- The search, neural-retrieval, and forensics layers all have committed output
+  artifacts rather than only architectural claims.
+- The multi-language implementation is real and test-backed across Python,
+  Haskell, and Scala.
+- The repository is broad, but it is not decorative breadth; multiple modules
+  are implemented and exercised.
+- What keeps THEMIS slightly below the most confident flagship bucket is not
+  lack of value, but the fact that its methodological center is spread across
+  several sub-research tracks instead of one sharply bounded empirical thesis.
+
+## Strongest empirical sub-story
+
+If THEMIS is foregrounded, the clearest and strongest story is:
+
+- hybrid and neural retrieval with committed latency/ranking artifacts,
+- plus THEMIS-ORACLE causal reranking backed by
+  `results/themis_oracle/causal_vs_standard.csv`,
+- with forensics and computation-theory modules presented as valuable
+  supporting research tracks rather than as the single main claim.
+
+## What Still Keeps THEMIS Slightly Below The Very Top Tier
+
+- the repository still spans multiple research directions at once,
+- the retrieval + ORACLE story is stronger than the forensics side
+  empirically,
+- the next real jump would come from larger external collections and broader
+  committed benchmark diversity.
 
 Optional local-manifest summaries are also supported and already demonstrated through fixture-backed examples:
 - `results/ir/external_collection_summary.json`
@@ -139,7 +239,7 @@ Run a forensics sample:
 PYTHONPATH=src/python python3 -m themis.cli forensics --image data/fixtures/forensics_image_fake.json
 ```
 
-## Computation Theory Module
+## Supporting Computation Theory Module
 
 `src/python/themis/computation/` adds a formal computation theory track covering three pillars of theoretical computer science:
 
@@ -188,22 +288,11 @@ PYTHONPATH=src/python python3 -m themis.computation.runner
 
 ## Research notes
 
-THEMIS is already suitable as a serious research prototype:
 - the codebase is multi-language and modular
 - the novelty claim is explicit and implemented
 - the experiments are reproducible inside the repository
 - the paper draft is synchronized with committed metrics
+- the retrieval + ORACLE axis provides the clearest empirical thesis for the
+  broader platform
 
-The remaining gap between this repository and a full production-scale system is mostly about larger external datasets, cluster-scale deployment, and stronger external evaluation, not about missing core architecture.
 
-## Citation
-
-```bibtex
-@misc{tsitlauri2026themis,
-  author = {George David Tsitlauri},
-  title  = {THEMIS: Trustworthy Hybrid Engine for Multimodal Intelligent Search},
-  year   = {2026},
-  institution = {University of Thessaly},
-  email  = {gdtsitlauri@gmail.com}
-}
-```
